@@ -1,0 +1,32 @@
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: mongodb_eshop_
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend_eshop
+    environment:
+      MONGO_URI: mongodb://mongo:27017/ecommerceDB
+      NODE_ENV: production
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend_eshop
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
