@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - TechFlow</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white border-b border-gray-100 fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-indigo-600 p-2 rounded-lg">
+                        <i class="fas fa-bolt text-white text-xl"></i>
+                    </div>
+                    <span class="font-bold text-xl text-gray-900">TechFlow</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="product-list.html" class="nav-link">Products</a>
+                    <a href="orders.html" class="nav-link">Orders</a>
+                    <a href="cart.html" class="relative">
+                        <i class="fas fa-shopping-cart text-xl text-gray-600 hover:text-indigo-600 transition-colors"></i>
+                        <span class="absolute -top-2 -right-2 bg-indigo-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs" id="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden focus:outline-none text-gray-600" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden hidden mt-4 space-y-3" id="mobile-menu">
+                <a href="../index.html" class="block nav-link py-2">Home</a>
+                <a href="product-list.html" class="block nav-link py-2">Products</a>
+                <a href="orders.html" class="block nav-link py-2">Orders</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Page -->
+    <div class="container mx-auto px-4 pt-24 pb-12">
+        <h1 class="text-4xl font-bold mb-8">Shopping Cart</h1>
+        <div class="card p-8">
+            <!-- Cart Items -->
+            <div id="cart-items" class="space-y-6"></div>
+            
+            <!-- Empty Cart Message -->
+            <div id="cart-empty" class="hidden text-center py-12">
+                <i class="fas fa-shopping-cart text-6xl text-gray-200 mb-6"></i>
+                <p class="text-xl text-gray-600 mb-4">Your cart is empty</p>
+                <a href="product-list.html" class="btn-primary inline-flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i>Continue Shopping
+                </a>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="mt-8 pt-8 border-t border-gray-100">
+                <h2 class="text-2xl font-bold mb-6">Order Summary</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between text-gray-600">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal" class="text-xl font-semibold text-gray-900">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-gray-600">
+                        <span>Shipping</span>
+                        <span class="text-xl font-semibold text-gray-900">Free</span>
+                    </div>
+                    <div class="flex justify-between text-gray-600">
+                        <span>Tax (10%)</span>
+                        <span id="cart-tax" class="text-xl font-semibold text-gray-900">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-gray-900 pt-4 border-t border-gray-100">
+                        <span class="font-semibold">Total</span>
+                        <span id="cart-total" class="text-2xl font-bold">$0.00</span>
+                    </div>
+                </div>
+                <a href="checkout.html" id="checkout-button" class="btn-primary w-full mt-8 flex items-center justify-center gap-2">
+                    <i class="fas fa-lock"></i>Proceed to Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="bg-indigo-600 p-2 rounded-lg">
+                            <i class="fas fa-bolt text-white text-xl"></i>
+                        </div>
+                        <span class="font-bold text-xl">TechFlow</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Empowering the future of technology through innovative products and exceptional service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="product-list.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="../index.html#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="orders.html" class="text-gray-400 hover:text-white transition-colors">Orders</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="product-list.html?category=laptops" class="text-gray-400 hover:text-white transition-colors">Laptops</a></li>
+                        <li><a href="product-list.html?category=smartphones" class="text-gray-400 hover:text-white transition-colors">Smartphones</a></li>
+                        <li><a href="product-list.html?category=accessories" class="text-gray-400 hover:text-white transition-colors">Accessories</a></li>
+                        <li><a href="product-list.html?category=wearables" class="text-gray-400 hover:text-white transition-colors">Wearables</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Innovation Street<br>Berlin, Germany</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                            <span>+49 123 456 7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <span>hello@techflow.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 mb-8">
+            
+            <!-- Copyright -->
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 TechFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js" defer></script>
+</body>
+</html>

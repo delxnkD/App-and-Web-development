@@ -1,23 +1,17 @@
-# Use Node.js LTS as base image
+# Use a simple Node.js image for http-server
 FROM node:22
 
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Install http-server
+RUN npm install -g http-server
 
-# Install dependencies
-RUN npm install
-
-# Copy the entire backend folder
+# Copy all frontend files
 COPY . .
 
-# # Seed data before starting the application
-# RUN npm run product-seed
+# Expose port 8080 for frontend
+EXPOSE 8080
 
-# Expose port 5000
-EXPOSE 5000
-
-# Start the application
-CMD ["npm", "start"]
+# Serve frontend with http-server
+CMD ["http-server", ".", "-p", "8080"]

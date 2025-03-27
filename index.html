@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechFlow | Modern Tech Marketplace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-slate-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white border-b border-gray-100 fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-indigo-600 p-2 rounded-lg">
+                        <i class="fas fa-bolt text-white text-xl"></i>
+                    </div>
+                    <span class="font-bold text-xl text-gray-900">TechFlow</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="pages/product-list.html" class="nav-link">Products</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="pages/orders.html" class="nav-link">Orders</a>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="hidden md:block flex-1 max-w-xl mx-8">
+                    <div class="relative">
+                        <input type="text" placeholder="Search for products..." class="input-field pl-12">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu and Cart -->
+                <div class="flex items-center space-x-6">
+                    <a href="pages/cart.html" class="relative">
+                        <i class="fas fa-shopping-cart text-xl text-gray-600 hover:text-indigo-600 transition-colors"></i>
+                        <span class="absolute -top-2 -right-2 bg-indigo-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs" id="cart-count">0</span>
+                    </a>
+                    <button class="md:hidden focus:outline-none text-gray-600" id="mobile-menu-button">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden hidden mt-4 space-y-3" id="mobile-menu">
+                <a href="index.html" class="block nav-link py-2">Home</a>
+                <a href="pages/product-list.html" class="block nav-link py-2">Products</a>
+                <a href="#about" class="block nav-link py-2">About</a>
+                <a href="pages/orders.html" class="block nav-link py-2">Orders</a>
+                <div class="pt-2">
+                    <div class="relative">
+                        <input type="text" placeholder="Search products..." class="input-field pl-12">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-24 pb-16 bg-gradient-to-br from-indigo-50 via-white to-sky-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">Next-Gen Tech,<br>Simplified</h1>
+                    <p class="text-xl text-gray-600 mb-8">Discover the future of technology with our curated collection of premium devices and accessories.</p>
+                    <div class="flex space-x-4">
+                        <a href="pages/product-list.html" class="btn-primary">Explore Products</a>
+                        <a href="#about" class="btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/6366F1/FFFFFF/png?text=TechFlow" alt="Modern Tech" class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Categories -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Shop by Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="pages/product-list.html?category=laptops" class="card p-6 text-center group">
+                    <div class="bg-indigo-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-indigo-100 transition-colors">
+                        <i class="fas fa-laptop text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">Laptops</h3>
+                    <p class="text-sm text-gray-500 mt-2">Premium notebooks</p>
+                </a>
+                <a href="pages/product-list.html?category=smartphones" class="card p-6 text-center group">
+                    <div class="bg-sky-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-100 transition-colors">
+                        <i class="fas fa-mobile-alt text-2xl text-sky-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">Smartphones</h3>
+                    <p class="text-sm text-gray-500 mt-2">Latest models</p>
+                </a>
+                <a href="pages/product-list.html?category=accessories" class="card p-6 text-center group">
+                    <div class="bg-rose-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-rose-100 transition-colors">
+                        <i class="fas fa-headphones text-2xl text-rose-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">Accessories</h3>
+                    <p class="text-sm text-gray-500 mt-2">Essential add-ons</p>
+                </a>
+                <a href="pages/product-list.html?category=wearables" class="card p-6 text-center group">
+                    <div class="bg-emerald-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-emerald-100 transition-colors">
+                        <i class="fas fa-watch text-2xl text-emerald-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">Wearables</h3>
+                    <p class="text-sm text-gray-500 mt-2">Smart devices</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <img src="https://placehold.co/600x400/0EA5E9/FFFFFF/png?text=TechFlow" alt="About Us" class="rounded-2xl shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold mb-6">Revolutionizing Tech Shopping</h2>
+                    <p class="text-gray-600 mb-6">
+                        At TechFlow, we're not just selling products – we're building the future of technology retail. Our platform combines cutting-edge design with seamless user experience to make tech shopping effortless and enjoyable.
+                    </p>
+                    <div class="grid grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-indigo-600 mb-2">5K+</div>
+                            <div class="text-sm text-gray-500">Products</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-indigo-600 mb-2">50K+</div>
+                            <div class="text-sm text-gray-500">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-indigo-600 mb-2">30+</div>
+                            <div class="text-sm text-gray-500">Countries</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Customer Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/50?text=Sarah" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "TechFlow has transformed how I shop for tech. The curated selection and seamless experience make it my go-to destination."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="card p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/50?text=Michael" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Michael Chen</h4>
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "The attention to detail in product curation and customer service is unmatched. A truly premium shopping experience."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="card p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/50?text=Emily" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Emily Rodriguez</h4>
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "As a tech enthusiast, I appreciate how TechFlow stays ahead of trends while maintaining quality and reliability."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="bg-indigo-600 p-2 rounded-lg">
+                            <i class="fas fa-bolt text-white text-xl"></i>
+                        </div>
+                        <span class="font-bold text-xl">TechFlow</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Empowering the future of technology through innovative products and exceptional service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="pages/product-list.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="pages/orders.html" class="text-gray-400 hover:text-white transition-colors">Orders</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="pages/product-list.html?category=laptops" class="text-gray-400 hover:text-white transition-colors">Laptops</a></li>
+                        <li><a href="pages/product-list.html?category=smartphones" class="text-gray-400 hover:text-white transition-colors">Smartphones</a></li>
+                        <li><a href="pages/product-list.html?category=accessories" class="text-gray-400 hover:text-white transition-colors">Accessories</a></li>
+                        <li><a href="pages/product-list.html?category=wearables" class="text-gray-400 hover:text-white transition-colors">Wearables</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Innovation Street<br>Berlin, Germany</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                            <span>+49 123 456 7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <span>hello@techflow.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 mb-8">
+            
+            <!-- Copyright -->
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 TechFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
